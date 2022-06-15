@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans Math', Verdana, 'Geneva', Tahoma, sans-serif; 
+    background-color: rgb(245, 173, 84);
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.calc {
+    box-sizing: content-box;
+    padding: 3vh;
+    margin: 0 auto;
+    width: 20vw;
+    background-color : navajowhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+    border: 1mm solid black;
+    border-radius: 10px;
+}
+
+.display {
+    box-sizing: border-box;
+    background-color: aqua;
+    width: 100%;
+    height: 17vh;
+    border-radius: 10px;
+    border: 1mm solid black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    gap: 2vh;
+}
+
+.clear, .delete {
+    background-color: beige;
+    font-size : larger;
+    font-weight : 600;
+    width: 50%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1mm solid black;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* flex: auto; */
+    /* flex: 1; */
+    gap: 2vh;
+}
+
+.row .button {
+    font-size : larger;
+    font-weight : 600;
+    font-size: larger;
+    background-color:darkorange;
+    width: 4vw;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1mm solid black;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+}
+
+.row .button:hover,
+.clear:hover,
+.delete:hover {
+    filter: brightness(90%);
+}
+
+.row .button:active,
+.clear:active,
+.delete:active {
+    filter: brightness(85%);
+}
+
+  
+
+.numberpad {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vh;
+}
+
+.row .operator {
+    background-color: yellow;
+}
+
+.row .equal {
+    background-color : yellowgreen;
+}
+

@@ -6,31 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+Math" rel="stylesheet">
 </head>
 <body>
     <div class="calc">
-        <div class="display"></div>
+        <div class="display">
+        </div>
         <div class="container">
-            <button class="clear">Clear</button>
-            <button class="delete">Delete</button>
+            <div class="clear">CLEAR</div>
+            <div class="delete">DELETE</div>
         </div>
         <div class="numberpad">
-            <button data-key="55" class="seven">7</button>
-            <button data-key="56" class="eight">8</button>
-            <button data-key="57" class="nine">9</button>
-            <button data-key="191" class="operator divide">÷</button>
-            <button data-key="52" class="four">4</button>
-            <button data-key="53" class="five">5</button>
-            <button data-key="54" class="six">6</button>
-            <button data-key="106" class="operator multiply">×</button>
-            <button data-key="49" class="one">1</button>
-            <button data-key="50" class="two">2</button>
-            <button data-key="51" class="three">3</button>
-            <button data-key="109" class="operator subtract">-</button>
-            <button data-key="190" class="dot">.</button>
-            <button data-key="48" class="zero">0</button>
-            <button data-key="61" class="equal">=</button>
-            <button data-key="107" class="operator addition">+</button>
+            <div class="row">
+                <div data-key="55" class="button seven">
+                    <kbd>7</kbd>
+                </div>
+                <div data-key="56" class="button eight">
+                    <kbd>8</kbd>
+                </div>
+                <div data-key="57" class="button nine">
+                    <kbd>9</kbd>
+                </div>
+                <div data-key="191" class="button operator divide">
+                    <kbd>/</kbd>
+                </div>
+            </div>
+            <div class="row">
+                <div data-key="52" class="button four">
+                    <kbd>4</kbd>
+                </div>
+                <div data-key="53" class="button five">
+                    <kbd>5</kbd>
+                </div>
+                <div data-key="54" class="button six">
+                    <kbd>6</kbd>
+                </div>
+                <div data-key="106" class="button operator multiply">
+                    <kbd>*</kbd>
+                </div>
+            </div>
+            <div class="row">
+                <div data-key="49" class="button one">
+                    <kbd>1</kbd>
+                </div>
+                <div data-key="50" class="button two">
+                    <kbd>2</kbd>
+                </div>
+                <div data-key="51" class="button three">
+                    <kbd>3</kbd>
+                </div>
+                <div data-key="109" class="button operator subtract">
+                    <kbd>-</kbd>
+                </div>
+            </div>
+            <div class="row">
+                <div data-key="190" class="button dot">
+                    <kbd>.</kbd>
+                </div>
+                <div data-key="48" class="button zero">
+                    <kbd>0</kbd>
+                </div>
+                <div data-key="61" class="button equal">
+                    <kbd>=</kbd>
+                </div>
+                <div data-key="107" class="button operator addition">
+                    <kbd>+</kbd>
+                </div>
+            </div>
         </div>
     </div>
 </body>
