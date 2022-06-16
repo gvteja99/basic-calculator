@@ -7,71 +7,42 @@
     <title>Basic Calculator</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+Math" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="calc">
         <div class="display">
+            <div class="equation"></div>
+            <div class="result">0</div>
         </div>
         <div class="container">
-            <div class="clear">CLEAR</div>
-            <div class="delete">DELETE</div>
+            <div data-key="Escape" class="button clear">CLEAR</div>
+            <div data-key="Backspace" class="button delete">DELETE</div>
         </div>
         <div class="numberpad">
             <div class="row">
-                <div data-key="55" class="button seven">
-                    <kbd>7</kbd>
-                </div>
-                <div data-key="56" class="button eight">
-                    <kbd>8</kbd>
-                </div>
-                <div data-key="57" class="button nine">
-                    <kbd>9</kbd>
-                </div>
-                <div data-key="191" class="button operator divide">
-                    <kbd>/</kbd>
-                </div>
+                <div data-key="7" class="button seven">7</div>
+                <div data-key="8" class="button eight">8</div>
+                <div data-key="9" class="button nine">9</div>
+                <div data-key="/" class="button operator divide">÷</div>
             </div>
             <div class="row">
-                <div data-key="52" class="button four">
-                    <kbd>4</kbd>
-                </div>
-                <div data-key="53" class="button five">
-                    <kbd>5</kbd>
-                </div>
-                <div data-key="54" class="button six">
-                    <kbd>6</kbd>
-                </div>
-                <div data-key="106" class="button operator multiply">
-                    <kbd>*</kbd>
-                </div>
+                <div data-key="4" class="button four">4</div>
+                <div data-key="5" class="button five">5</div>
+                <div data-key="6" class="button six">6</div>
+                <div data-key="*" class="button operator multiply">×</div>
             </div>
             <div class="row">
-                <div data-key="49" class="button one">
-                    <kbd>1</kbd>
-                </div>
-                <div data-key="50" class="button two">
-                    <kbd>2</kbd>
-                </div>
-                <div data-key="51" class="button three">
-                    <kbd>3</kbd>
-                </div>
-                <div data-key="109" class="button operator subtract">
-                    <kbd>-</kbd>
-                </div>
+                <div data-key="1" class="button one">1</div>
+                <div data-key="2" class="button two">2</div>
+                <div data-key="3" class="button three">3</div>
+                <div data-key="-" class="button operator subtract">-</div>
             </div>
             <div class="row">
-                <div data-key="190" class="button dot">
-                    <kbd>.</kbd>
-                </div>
-                <div data-key="48" class="button zero">
-                    <kbd>0</kbd>
-                </div>
-                <div data-key="61" class="button equal">
-                    <kbd>=</kbd>
-                </div>
-                <div data-key="107" class="button operator addition">
-                    <kbd>+</kbd>
-                </div>
+                <div data-key="." class="button dot">.</div>
+                <div data-key="0" class="button zero">0</div>
+                <div data-key="=" class="button equal">=</div>
+                <div data-key="+" class="button operator addition">+</div>
             </div>
         </div>
     </div>

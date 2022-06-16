@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Noto Sans Math', Verdana, 'Geneva', Tahoma, sans-serif; 
-    background-color: rgb(245, 173, 84);
+    background-color: rgb(232, 214, 192);
 }
 
 html, body {
@@ -27,11 +27,43 @@ html, body {
 
 .display {
     box-sizing: border-box;
-    background-color: aqua;
+    background-color: rgb(92, 245, 245);
     width: 100%;
     height: 17vh;
     border-radius: 10px;
     border: 1mm solid black;
+}
+
+.equation {
+    overflow: auto;
+    overflow-x : scroll;
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    height: 30%;
+    text-align: right;
+    padding: 1vh 2vh 0;
+    font-size: 1.3vw;
+    font-weight: 500;
+}
+
+.result {
+    overflow: auto;
+    overflow-x : scroll;
+    display: flex;
+    justify-content: right;
+    /* direction: rtl;
+    unicode-bidi:bidi-override; */
+    width: 90%;
+    text-align: start;
+    padding: 0 2vh 0;
+    font-size: 3vw;
+    font-weight: 500;
+}
+
+.equation::-webkit-scrollbar,
+.result::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .container {
@@ -60,6 +92,10 @@ html, body {
     -o-user-select:none;
 }
 
+.delete {
+    background-color: rgb(254, 140, 140);
+}
+
 .row {
     width: 100%;
     display: flex;
@@ -74,7 +110,7 @@ html, body {
     font-size : larger;
     font-weight : 600;
     font-size: larger;
-    background-color:darkorange;
+    background-color:rgb(249, 171, 93);
     width: 4vw;
     height: 7vh;
     display: flex;
@@ -89,18 +125,13 @@ html, body {
     -o-user-select:none;
 }
 
-.row .button:hover,
-.clear:hover,
-.delete:hover {
+.button:hover {
     filter: brightness(90%);
 }
 
-.row .button:active,
-.clear:active,
-.delete:active {
-    filter: brightness(85%);
+.button:active, .pressed {
+    filter : brightness(85%);
 }
-
   
 
 .numberpad {
@@ -113,10 +144,10 @@ html, body {
 }
 
 .row .operator {
-    background-color: yellow;
+    background-color: rgb(252, 252, 80);
 }
 
 .row .equal {
-    background-color : yellowgreen;
+    background-color : rgb(190, 241, 88);
 }
 
