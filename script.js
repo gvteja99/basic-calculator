@@ -1,5 +1,4 @@
 function pressKey(e) {
-    // console.log(e);
     let kc = e.key;
 
     (kc === 'Enter')?kc='=':kc;
@@ -34,7 +33,6 @@ function pressButton(e) {
 function actionButton(button) {
 
     let result = document.querySelector('.result');
-    let equation = document.querySelector('.equation');
 
     if (['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].includes(button.textContent)){
         if (result.textContent === '0') {
@@ -53,7 +51,7 @@ function actionButton(button) {
     } else if (['+', '-', '×', '÷'].includes(button.textContent)) {
         sign = button.textContent;
         if (numbers[0]) {
-            result.textContent = operate(numbers[0], +result.textContent, sign).toString();
+            result.textContent = operate(numbers[0], +result.textContent, sign).toPrecision(9).toString();
             numbers[0] = +result.textContent;
         } else {
             numbers[0] = +result.textContent
@@ -62,10 +60,9 @@ function actionButton(button) {
 
     } else if (button.textContent === '=') {
         if (sign) {
-            result.textContent = operate(numbers[0], +result.textContent, sign).toString();
+            result.textContent = operate(numbers[0], +result.textContent, sign).toPrecision(9).toString();
             numbers[0] = NaN;
         }
-        // equation.textContent = ` ${result.textContent} =`
     }
 
 }
@@ -85,7 +82,14 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return a/b
+    if (b){
+        return a/b
+    } else {
+        alert("You can't divide by 0")
+        numbers = [NaN, NaN];
+        sign = NaN;
+        return 0
+    }
 }
 
 function operate(a, b, sign) {
@@ -94,26 +98,6 @@ function operate(a, b, sign) {
     sign==='-'?subtract(a,b):
     sign==='÷'?divide(a,b):multiply(a,b);
 }
-
-// function evaluate(e) {
-//     let result = document.querySelector('.result');
-//     let equation = document.querySelector('.equation');
-//     let sign;
-    
-//     numbers = equation.textContent.split(/[-/+//*//]+/);
-//     if (numbers.length != 2 || numbers[1] === '') {
-//         return 
-//     }
-
-//     equation.textContent = result.textContent;
-//     equation.textContent.includes('+')?sign='+':
-//     equation.textContent.includes('-')?sign='-':
-//     equation.textContent.includes('*')?sign='*':sign='/';
-
-//     numbers = numbers.map(num => +num)
-//     result.textContent = operate(numbers, sign)
-
-// }
 
 window.addEventListener('keydown', pressKey);
 window.addEventListener('keyup', releaseKey);
