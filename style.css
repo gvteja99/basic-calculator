@@ -34,7 +34,7 @@ html, body {
     border: 1mm solid black;
 }
 
-.equation {
+/* .equation {
     overflow: auto;
     overflow-x : scroll;
     display: flex;
@@ -45,16 +45,18 @@ html, body {
     padding: 1vh 2vh 0;
     font-size: 1.3vw;
     font-weight: 500;
-}
+} */
 
 .result {
     overflow: auto;
     overflow-x : scroll;
     display: flex;
     justify-content: right;
+    align-items: center;
     /* direction: rtl;
     unicode-bidi:bidi-override; */
     width: 90%;
+    height: 100%;
     text-align: start;
     padding: 0 2vh 0;
     font-size: 3vw;

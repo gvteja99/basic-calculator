@@ -44,17 +44,28 @@ function actionButton(button) {
         }
     } else if (button.textContent === 'CLEAR') {
         result.textContent = '0';
-        equation.textContent = '';
+        numbers = [NaN, NaN];
+        sign = NaN;
     } else if (button.textContent === 'DELETE') {
         result.textContent = result.textContent.slice(0, -1);
     } else if (button.textContent === '.' && (!result.textContent.includes(button.textContent))) {
-        result.textContent += button.textContent
+        result.textContent += button.textContent;
     } else if (['+', '-', '×', '÷'].includes(button.textContent)) {
-        equation.textContent = result.textContent + ` ${button.textContent}`
-        result.textContent = '0';
         sign = button.textContent;
-    } else if (button.textContent === '=' && (!equation.textContent.includes(button.textContent))) {
-        equation.textContent += ` ${result.textContent} =`
+        if (numbers[0]) {
+            result.textContent = operate(numbers[0], +result.textContent, sign).toString();
+            numbers[0] = +result.textContent;
+        } else {
+            numbers[0] = +result.textContent
+            result.textContent = '0'
+        }
+
+    } else if (button.textContent === '=') {
+        if (sign) {
+            result.textContent = operate(numbers[0], +result.textContent, sign).toString();
+            numbers[0] = NaN;
+        }
+        // equation.textContent = ` ${result.textContent} =`
     }
 
 }
@@ -77,14 +88,11 @@ function divide(a, b) {
     return a/b
 }
 
-function operate(numbers, sign) {
+function operate(a, b, sign) {
     
-    let a = numbers[0]
-    let b = numbers[1]
-
     return sign==='+'?add(a,b):
     sign==='-'?subtract(a,b):
-    sign==='/'?divide(a,b):multiply(a,b);
+    sign==='÷'?divide(a,b):multiply(a,b);
 }
 
 // function evaluate(e) {
@@ -111,5 +119,5 @@ window.addEventListener('keydown', pressKey);
 window.addEventListener('keyup', releaseKey);
 window.addEventListener("click", pressButton);
 
-let sign = '+';
-let numbers = [0, 0];
+let sign = NaN;
+let numbers = [NaN, NaN];
